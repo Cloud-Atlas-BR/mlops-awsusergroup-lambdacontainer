@@ -13,7 +13,6 @@ def handler(event, context):
 
     row_arti = np.array([sepal_length,sepal_width,petal_length,petal_width]).reshape(1,4)
 
-    dados = list(event["data"])
     modelo = joblib.load("modelo.joblib")
     resposta = int(modelo.predict(row_arti)[0])
 
