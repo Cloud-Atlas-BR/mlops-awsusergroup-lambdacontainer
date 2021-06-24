@@ -13,5 +13,5 @@ y = iris.target
 #Train model with all data 
 model = svm.SVC(kernel='poly', degree=3, C=1.0).fit(X, y)
 
-#Save mode
+#Save mod
 joblib.dump(model, "modelo.joblib")
