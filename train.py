@@ -1,13 +1,17 @@
-import joblib
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.datasets import make_classification
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
 
-X, y = make_classification(n_samples=1000, n_features=4,
-                           n_informative=2, n_redundant=0,   
-                           random_state=0, shuffle=False)
+from sklearn import svm, datasets
+import joblib 
+import numpy as np
 
-clf = RandomForestClassifier(max_depth=2, random_state=0)
+#Load data
+iris = datasets.load_iris()
+X = iris.data  
+y = iris.target
 
-clf.fit(X, y)
+#Train model with all data 
+model = svm.SVC(kernel='poly', degree=3, C=1.0).fit(X, y)
 
-joblib.dump(clf, "modelo.joblib")
+#Save model
+joblib.dump(model, "modelo.joblib")
