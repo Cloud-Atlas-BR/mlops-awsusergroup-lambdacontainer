@@ -9,7 +9,7 @@ Resources:
       PackageType: Image
       Code:
         ImageUri: 133562267374.dkr.ecr.us-west-2.amazonaws.com/mlops-lambda-pipeline:latest
-      Timeout: 5
+      Timeout: 90
   Role:
     Type: AWS::IAM::Role
     Properties:
